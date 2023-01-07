@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Login ESTIAM ESTIAM</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <%- include ("./includes/style.ejs") %>
+
+</head>
+
+<body>
+
+    <%- include ("./includes/header.ejs") %>
+        <!-- ======= Hero Section ======= -->
+        <section id="hero" class="d-flex align-items-center">
+
+            <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+                <h1>ESTIAM </h1>
+                <section class=" bg-image">
+                    <div class="login-form">
+                        <form action="/login" method="post">
+                            <h2 class="text-center">Log in</h2> <br>
+                            <div class="form-group">
+                                <input name="mail" type="text" class="form-control" placeholder="Email" required="required">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input name="pass" type="password" class="form-control" placeholder="Password" required="required">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                            </div>
+                            <div class="clearfix">
+                                <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+                                <a href="#" class="float-right">Forgot Password?</a>
+                            </div>
+                        </form>
+                        <p class="text-center"><a href="/register">Create an Account</a></p>
+                    </div>
+                </section>
+            </div>
+
+        </section>
+        <!-- End Hero -->
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h3>Estiam</h3>
+                            <p>31, rue Paul Meurice <br> 75020 Paris <br> France
+                                <br><br>
+                                <strong>Phone:</strong> +33182837500<br>
+                                <strong>Email:</strong> admission@estiam.education<br>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                            <h4>Join Our Newsletter</h4>
+                            <p> Accompagnement des étudiants vis à vis des entreprises :</p>
+                            <form action="" method="post">
+                                <input type="email" name="email"><input type="submit" value="Subscribe">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container d-md-flex py-4">
+
+                <div class="me-md-auto text-center text-md-start">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>Estiam</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        Designed by <a href="https://github.com/dassimanuel000/Twitter_bot">ESTIAM</a>
+                    </div>
+                </div>
+                <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="/vendor/aos/aos.js"></script>
+        <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="/main.js"></script>
+
+        <script>
+            function false_user() {
+                swal("Erreur de connexion Ressayer!", "Created your own account!", {
+                    icon: "error",
+                    buttons: {
+                        confirm: {
+                            className: 'btn btn-danger'
+                        }
+                    },
+                }).catch(swal.noop);
+            }
+
+            function logout() {
+                swal("Déconnexion !", "Come back ?", {
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            className: 'btn btn-danger'
+                        }
+                    },
+                }).catch(swal.noop);
+            }
+
+            function need() {
+                swal("Veuillez vous connectez !", " Ou Created your own account!", {
+                    icon: "error",
+                    buttons: {
+                        confirm: {
+                            className: 'btn btn-danger'
+                        }
+                    },
+                }).catch(swal.noop);
+            }
+
+            function register() {
+                swal("Vous êtes à présent enregistrer !", " Veuillez vous connectez !", {
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            className: 'btn btn-danger'
+                        }
+                    },
+                }).catch(swal.noop);
+            }
+
+            function done() {
+                swal({
+                    title: 'Vous etes deja online',
+                    text: "Allez au dashboard !",
+                    type: 'success',
+                    buttons: {
+                        confirm: {
+                            text: 'Yes, it!',
+                            className: 'btn btn-success'
+                        },
+                        cancel: {
+                            visible: true,
+                            className: 'btn btn-danger'
+                        }
+                    }
+                }).then((Delete) => {
+                    if (Delete) {
+                        setTimeout(window.location.href = "/dashboard", 151000);
+                    } else {
+                        swal.close();
+                    }
+                });
+            }
+        </script>
+
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script>
+            var url_string = window.location.href; //window.location.href
+            var url = new URL(url_string);
+            var c = url.searchParams.get("status");
+            console.log(c);
+            if (c === "false") {
+                setTimeout(false_user(), 5000);
+            }
+            if (c === "need") {
+                setTimeout(need(), 5000);
+            }
+            if (c === "done") {
+                setTimeout(done(), 5000);
+            }
+            if (c === "logout") {
+                setTimeout(logout(), 5000);
+            }
+            if (c === "register") {
+                setTimeout(register(), 5000);
+            }
+        </script>
+
+</body>
+
+</html>

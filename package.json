@@ -1,0 +1,36 @@
+{
+  "name": "twitter",
+  "version": "1.0.0",
+  "description": "estiam devoir e4 tp",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dassimanuel000/Twitter_bot.git"
+  },
+  "keywords": [
+    "estiam",
+    "dassimanuel000"
+  ],
+  "author": "dassimanuel000",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dassimanuel000/Twitter_bot/issues"
+  },
+  "homepage": "https://github.com/dassimanuel000/Twitter_bot#readme",
+  "dependencies": {
+    "cron": "^2.1.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "needle": "^3.2.0",
+    "nodemon": "^2.0.20",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
